@@ -65,7 +65,7 @@
   <script type="text/javascript" src="/globe/third-party/Detector.js"></script>
   <script type="text/javascript" src="/globe/third-party/three.min.js"></script>
   <script type="text/javascript" src="/globe/third-party/Tween.js"></script>
-  <script type="text/javascript" src="/globe/globe.js"></script>
+  <script type="text/javascript" src="/globe/globe.js?<?php echo filemtime('globe.js');?>"></script>
   <script type="text/javascript">
 // Where to put the globe?
 var container = document.getElementById( 'container' );
