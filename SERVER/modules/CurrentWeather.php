@@ -1,5 +1,5 @@
 <?php
-class Weather {
+class CurrentWeather {
     public $CurrIcon = "";
     public $CurrF = "";
 
@@ -7,7 +7,7 @@ class Weather {
         $key = "";
         $loc = "NJ/Cherry_Hill";
 
-        $filename = "./current.json";
+        $filename = "data/CurrentWeather.json";
 
         if (time()-filemtime($filename) > (60*15)) {
             // file older than 15 min
@@ -25,6 +25,11 @@ class Weather {
 
         $this->CurrIcon = $current->current_observation->icon;
         $this->CurrF = $current->current_observation->temp_f;
+    }
+
+    public function Draw() {
+        echo "<img width='24' height='24' src='icons/weather/".$this->CurrIcon.".png' style='margin-right:18px;'/>";
+        echo $this->CurrF . "&deg; F";
     }
 }
 ?>

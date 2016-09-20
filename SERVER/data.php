@@ -1,5 +1,5 @@
 <?php
-$filename = "./data.txt";
+$filename = "data/data.txt";
 header('Content-Type: application/json');
 
 // figure out do we pull from db or file for set via opentrips
