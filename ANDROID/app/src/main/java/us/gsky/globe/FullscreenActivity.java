@@ -7,8 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.Window;
-
+import android.view.WindowManager;
 import com.amazon.android.webkit.AmazonWebKitFactories;
 import com.amazon.android.webkit.AmazonWebKitFactory;
 import com.amazon.android.webkit.AmazonWebView;
@@ -25,7 +24,7 @@ public class FullscreenActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         setContentView(R.layout.activity_fullscreen);
         if (!sFactoryInit) {
             factory = AmazonWebKitFactories.getDefaultFactory();
