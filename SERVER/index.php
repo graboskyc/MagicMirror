@@ -68,8 +68,12 @@
 
       <?php
         require_once("modules/FAA.php");
-        $FAA = new FAA;
         echo "<hr>";
+
+        $FAA = new FAA("PHL");
+        $FAA->Draw();
+
+        $FAA = new FAA("EWR");
         $FAA->Draw();
       ?>
 

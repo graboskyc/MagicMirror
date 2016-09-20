@@ -2,10 +2,11 @@
 class FAA {
     public $Delay = false;
     public $DelayType = "";
-    public $Loc = "PHL";
+    public $Loc = "";
 
-    public function __construct() {
-        $filename = "data/FAA.json";
+    public function __construct($aircode) {
+        $this->Loc = $aircode;
+        $filename = "data/FAA_".$aircode.".json";
 
         if (time()-filemtime($filename) > (60*15)) {
             // file older than 15 min
