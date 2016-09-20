@@ -66,6 +66,13 @@
         $W->Draw();
       ?>
 
+      <?php
+        require_once("modules/FAA.php");
+        $FAA = new FAA;
+        echo "<hr>";
+        $FAA->Draw();
+      ?>
+
   </div>
 
   <div id="rightcontainer">
