@@ -35,12 +35,14 @@ class News {
     }
 
     public function Draw() {
+        echo '<div id="news" style="font-size:28px;">';
         echo "<img width='32' height='32' src='icons/News.png' style='margin-right:18px;'/>";
         echo "NYT World News";
         echo "<hr>";
         foreach($this->StoryList as $s) {
             echo "<span style='font-size:14px;'>" . $s . "</span><br/><br/>";
         }
+        echo "</div>";
     }
 }
 ?>
