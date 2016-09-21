@@ -28,8 +28,8 @@ class CurrentWeather {
     }
 
     public function Draw() {
-        echo '<div id="weather" style="font-size:28px;">';
-        echo "<img width='24' height='24' src='icons/weather/".$this->CurrIcon.".png' style='margin-right:18px;'/>";
+        echo '<div id="weather" >';
+        echo "<img width='32' height='32' src='icons/weather/".$this->CurrIcon.".png' style='margin-right:22px;'/>";
         echo $this->CurrF . "&deg; F";
         echo "</div>";
     }

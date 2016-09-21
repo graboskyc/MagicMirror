@@ -29,7 +29,7 @@
       #leftcontainer {
         position: absolute;
         top: 20px;
-        width: 270px;
+        width: 300px;
         left: 20px;
         background-color: rgba(0,0,0,0.2);
         border-radius: 3px;
@@ -39,7 +39,7 @@
       #rightcontainer {
         position: absolute;
         top: 20px;
-        width: 270px;
+        width: 300px;
         right: 20px;
         background-color: rgba(0,0,0,0.2);
         border-radius: 3px;
@@ -74,6 +74,12 @@
         $FAA->Draw();
 
         $FAA = new FAA("EWR");
+        $FAA->Draw();
+
+        $FAA = new FAA("BOS");
+        $FAA->Draw();
+
+        $FAA = new FAA("ATL");
         $FAA->Draw();
       ?>
 
