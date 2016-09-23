@@ -20,6 +20,39 @@ public class FullscreenActivity extends AppCompatActivity {
     private static boolean sFactoryInit = false;
     private AmazonWebKitFactory factory = null;
 
+    private final static int INTERVAL = 1000 * 60 * 15; 
+    private String data = "<html>\n" +
+            "\n" +
+            "<head>\n" +
+            "    <title>GSKY.us </title>\n" +
+            "\n" +
+            "</head><body style=\"margin:0;padding:0px;overflow:hidden;background-color:#000000;\">\n" +
+            "<iframe src=\"http://grabosky.azurewebsites.net/globe\" id=\"mainframe\" style=\"overflow:hidden;height:100%;width:100%;\" width=\"100%\" height=\"100%\"></iframe> " +
+            "</frame></html>";
+
+    Handler mHandler = new Handler();
+    AmazonWebView mWebView;
+
+    Runnable mHandlerTask = new Runnable()
+    {
+        @Override
+        public void run() {
+            mWebView.loadData("", "text/html","UTF-8");
+            mWebView.loadData(data, "text/html","UTF-8");
+            mHandler.postDelayed(mHandlerTask, INTERVAL);
+        }
+    };
+
+    void startRepeatingTask()
+    {
+        mHandlerTask.run();
+    }
+
+    void stopRepeatingTask()
+    {
+        mHandler.removeCallbacks(mHandlerTask);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -41,27 +74,14 @@ public class FullscreenActivity extends AppCompatActivity {
             factory = AmazonWebKitFactories.getDefaultFactory();
         }
 
-        AmazonWebView mWebView;
+
 
         mWebView = (AmazonWebView) findViewById(R.id.myWebView);
         factory.initializeWebView(mWebView, 0xFFFFFF, false, null);
 
         mWebView.getSettings().setJavaScriptEnabled(true);
-        String data = "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\"\n" +
-                "        \"http://www.w3.org/TR/html4/strict.dtd\">\n" +
-                "<html>\n" +
-                "\n" +
-                "<head>\n" +
-                "    <title>GSKY.us </title>\n" +
-                "\n" +
-                "</head>\n" +
-                "<frameset rows=\"100%,*\" border=\"0\">\n" +
-                "    <frame src=\"http://grabosky.azurewebsites.net/globe\" frameborder=\"0\" />\n" +
-                "    <frame frameborder=\"0\" noresize />\n" +
-                "</frameset>\n" +
-                "</html>";
-        //mWebView.loadUrl("http://grabosky.azurewebsites.net/globe");
         mWebView.loadData(data, "text/html","UTF-8");
+        mHandlerTask.run();
     }
 
 }
