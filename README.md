@@ -15,6 +15,9 @@ Third party work:
 * [WebGL Globe](https://www.chromeexperiments.com/experiment/globe-viewer)
 * [Metro Studio icons](https://www.syncfusion.com/downloads/metrostudio)
 * [Weather Underground weather API](https://www.wunderground.com/weather/api/d/docs)
+* [FAA APIs](http://services.faa.gov/)
+* [New York Times API](https://developer.nytimes.com/)
+* [OpenFlights](http://openflights.org/)
 
 ## DB Code
 Load into XAMPP if you want to dynamically generate the dataset. Data formats are from OpenFlights. The DB structure is in the directory.
