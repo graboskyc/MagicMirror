@@ -25,8 +25,8 @@ class FAA {
         $current = json_decode($json_current);
         $this->Delay = $current->delay;
         $this->DelayType = $current->status->type;
-        $this->MaxDelay = str_replace("minute", "min", str_replace("hour", "hr", $current->status->maxDelay));
-        $this->AvgDelay = str_replace("minute", "min", str_replace("hour", "hr", $current->status->avgDelay));
+        $this->MaxDelay = str_replace("and", "&amp;", str_replace("minute", "min", str_replace("hour", "hr", $current->status->maxDelay)));
+        $this->AvgDelay = str_replace("and", "&amp;", str_replace("minute", "min", str_replace("hour", "hr", $current->status->avgDelay)));
     }
 
     public function Draw() {
@@ -38,8 +38,8 @@ class FAA {
         $msg = "";
         if ($this->Delay == "true") {
             if ($this->DelayType == "Airport Closure") { $icon = "Close.png"; $msg = "Closed"; }
-            else if ($this->DelayType == "Ground Stop") { $icon = "Stop.png"; $msg = "Grnd Stp"; }
-            else if ($this->DelayType == "Ground Delay") { $icon = "Timer.png"; $msg = "Grnd Del"; }
+            else if ($this->DelayType == "Ground Stop") { $icon = "Stop.png"; $msg = "Stop"; }
+            else if ($this->DelayType == "Ground Delay") { $icon = "Timer.png"; $msg = "Del"; }
             else { $icon = "Question.png"; $msg = str_replace("Departure", "Dep", $this->DelayType);}
 
             if($this->MaxDelay !== "") { $msg = $msg . " " . $this->MaxDelay . " max";}

@@ -29,7 +29,7 @@
       #leftcontainer {
         position: absolute;
         top: 20px;
-        width: 300px;
+        width: 350px;
         left: 20px;
         background-color: rgba(0,0,0,0.2);
         border-radius: 3px;
@@ -39,7 +39,7 @@
       #rightcontainer {
         position: absolute;
         top: 20px;
-        width: 300px;
+        width: 350px;
         right: 20px;
         background-color: rgba(0,0,0,0.2);
         border-radius: 3px;
