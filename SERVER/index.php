@@ -46,11 +46,30 @@
         font: 50px Georgia;
         padding: 10px;
       }
+      #topcontainer {
+        position: absolute;
+        top: 20px;
+        width: 33%;
+        left: 33%;
+        background-color: rgba(0,0,0,0.2);
+        border-radius: 3px;
+        font: 50px Georgia;
+        padding: 10px;
+        text-align:center;
+      }
     </style>
   </head>
   <body>
 
   <div id="container"></div>
+
+  <div id="topcontainer">
+    <?php
+      require_once('modules/AnalogClock.php');
+      $AC = new AnalogClock;
+      $AC->Draw(["-7", "0","3"]);
+    ?>
+  </div>
 
   <div id="leftcontainer">
       <?php
