@@ -18,6 +18,7 @@ Third party work:
 * [FAA APIs](http://services.faa.gov/)
 * [New York Times API](https://developer.nytimes.com/)
 * [OpenFlights](http://openflights.org/)
+* [Analog Clock](https://www.kirupa.com/html5/create_an_analog_clock_using_the_canvas.htm)
 
 ## DB Code
 Load into XAMPP if you want to dynamically generate the dataset. Data formats are from OpenFlights. The DB structure is in the directory.
