@@ -41,7 +41,7 @@ class AnalogClock {
         function startTimer()
         {
             updateClocks();
-            setInterval(updateClocks, 60000);
+            setInterval(updateClocks, 5000);
         }
 
         function updateClocks()
@@ -75,7 +75,7 @@ class AnalogClock {
                 var m = now.getMinutes();
                 var s = now.getSeconds();
 
-                document.getElementById("aclocktext_"+tz).innerHTML= (now.getUTCHours() + offset)+":"+m;
+                document.getElementById("aclocktext_"+tz).innerHTML= ("00" +(now.getUTCHours() + offset)).slice(-2)+":"+("00" + m).slice(-2);
                 
                 // --- Analog clock ---//
 
