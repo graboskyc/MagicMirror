@@ -29,21 +29,23 @@ else {
     //closeDB();
 }
 
-// add in the extras that are not in opentrips
-// lat, long, count where GPS is decimal
+if(!isset($_GET['extras'])) {
+    // add in the extras that are not in opentrips
+    // lat, long, count where GPS is decimal
 
-// NYC
-$series[] = "40.756667";
-$series[] = "-73.991111";
-$series[] = "4";
-// DC
-$series[] = "38.897222";
-$series[] = "-77.006389";
-$series[] = "5";
-// Philly
-$series[] = "39.955833";
-$series[] = "-75.181944";
-$series[] = "2";
+    // NYC
+    $series[] = "40.756667";
+    $series[] = "-73.991111";
+    $series[] = "5";
+    // DC
+    $series[] = "38.897222";
+    $series[] = "-77.006389";
+    $series[] = "5";
+    // Philly
+    $series[] = "39.955833";
+    $series[] = "-75.181944";
+    $series[] = "2";
+}
 
 echo json_encode($series);
 ?>
