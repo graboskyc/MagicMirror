@@ -36,7 +36,7 @@ if(!isset($_GET['extras'])) {
     // NYC
     $series[] = "40.756667";
     $series[] = "-73.991111";
-    $series[] = "5";
+    $series[] = "7";
     // DC
     $series[] = "38.897222";
     $series[] = "-77.006389";
