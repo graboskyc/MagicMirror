@@ -34,3 +34,8 @@ While an Android App, it is technically an Amazon Fire TV Hybrid HTML5 app. It w
 
 Third party work:
 * [Amazon WebView](https://developer.amazon.com/public/solutions/platforms/android-fireos/docs/building-and-testing-your-hybrid-app)
+
+# Fire TV Install
+* In Fire TV settings, enable remote debugging and untrusted sources in developer settings
+* Find IP of Fire TV
+* From a PC, run `adb.exe connect {ip}` then `adb.exe install path\to\pkg.apk`
