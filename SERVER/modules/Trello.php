@@ -11,8 +11,9 @@ class Trello {
         $apiKey = "";
         $apiToken = "";
 
-        if (time()-filemtime($filename) > (60*60)) {
+        if ((time()-filemtime($filename) > (60*60)) || (filesize($filename) < 10)) {
             // file older than 60 min
+            // or file empty
             $json_current = file_get_contents("https://api.trello.com/1/boards/".$boardID."/cards?key=".$apiKey."&token=".$apiToken);
             
             $fh = fopen($filename, "w") or die("Unable to open file!");
